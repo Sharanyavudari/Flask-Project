@@ -1,0 +1,45 @@
+<form method="POST" action="/Register">
+    <!-- Existing form fields -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+
+    <!-- Password complexity requirements -->
+    <div class="form-group">
+        <p class="text-muted">Password must:</p>
+        <ul class="text-muted">
+            <li>Be at least 8 characters long</li>
+            <li>Contain at least one uppercase letter</li>
+            <li>Contain at least one lowercase letter</li>
+            <li>Contain at least one digit</li>
+            <li>Contain at least one special character</li>
+        </ul>
+    </div>
+
+    <!-- Add this to display error messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Add reCAPTCHA field -->
+    <div class="form-group">
+        {{ form.recaptcha.label }}
+        {{ form.recaptcha }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+<a href="/login">Already registered</a>

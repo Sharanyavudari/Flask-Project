@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Add your CSS styles for alignment here if needed -->
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required placeholder="Enter your username"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password"><br><br>
+        
+        <!-- Add the reCAPTCHA widget here -->
+        <div class="g-recaptcha" data-sitekey="6LcwRFUoAAAAAHqCUWtWjHhPDqErtv7J6Bg_Bz4F"></div><br><br>
+        
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Include the reCAPTCHA script at the end of your HTML file -->
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+</body>
+<a href="/Register">Not Registered?</a>
+</html>

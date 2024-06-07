@@ -1,0 +1,46 @@
+<!--booking.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment</title>
+    <!-- Add your CSS styles here -->
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+
+    <!-- Add your booking form here -->
+    <form method="POST" action="/booking">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        <label for="date">Date:</label>
+        <input type="date" name="date" required><br>
+        <label for="time">Time:</label>
+        <input type="time" name="time" required><br>
+        
+        <!-- Add this to display error messages -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-danger">
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
+            
+        <input type="submit" value="Book Appointment">
+    </form>
+
+    <!-- Add your logout button here -->
+    <form method="GET" action="{{ url_for('logout') }}">
+        <button type="submit">Logout</button>
+    </form>
+
+    <!-- Include any necessary scripts or styles at the end of your HTML file -->
+
+</body>
+</html>

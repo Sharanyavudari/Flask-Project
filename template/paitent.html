@@ -1,0 +1,11 @@
+<h1>Available Appointments</h1>
+<ul>
+    {% for appointment in appointments %}
+        <li>{{ appointment.date }} at {{ appointment.time }} - {{ appointment.name }}</li>
+    {% endfor %}
+</ul>
+<a href="/booking">Book Appointment</a>
+<!-- Inside your base template that is extended by other templates -->
+<form method="GET" action="{{ url_for('logout') }}">
+    <button type="submit">Logout</button>
+</form>
