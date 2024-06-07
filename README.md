@@ -1,4 +1,4 @@
-#Clone the project into you system
+#Clone the project into your system
 
 #Create a python virtual enviroment
 "python -m venv /path/to/new/virtual/environment"
